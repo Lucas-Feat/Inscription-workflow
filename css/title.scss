@@ -1,4 +1,4 @@
-body {
+body, html {
   background-color: #1a1d20;
   color: #fff;
   font-family: 'Oswald', sans-serif;
@@ -6,6 +6,7 @@ body {
   line-height: 1.5;
   position: relative;
   height: 100vh;
+  width: 100vw;
   margin: 0;
   overflow: hidden;
 }
@@ -46,12 +47,14 @@ h1 {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   animation: opacity-full 1s 5s forwards;
   opacity: 0;
 
   &.disparition {
-    animation: opacity-none 1s forwards;
+    opacity: 1;
+    animation: opacity-none 1s 1.5s forwards;
   }
 }
 
@@ -62,6 +65,10 @@ h1 {
   position: relative;
   cursor: pointer;
   transition: transform 0.4s ease;
+
+  svg {
+    transform: rotate(-90deg);
+  }
 
   &:hover {
     transform: scale(1.1);
@@ -106,84 +113,6 @@ h1 {
   }
 }
 
-#rocket {
-  position: absolute;
-  opacity: 0;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: opacity-full 1s 5s forwards;
-  width: 150px;
-
-  &.rocket-landing {
-    animation: rocket-landing 2s forwards;
-  }
-
-  .st0 {
-    fill: #4F5D73;
-  }
-
-  .st1 {
-    opacity: 0.2;
-  }
-
-  .st2 {
-    fill: #231F20;
-  }
-
-  .st3 {
-    fill: #C75C5C;
-  }
-
-  .st4 {
-    fill: #E0995E;
-    animation: rocket-launch 0.3s infinite;
-  }
-
-  .st5 {
-    fill: #F5CF87;
-    animation: rocket-launch 0.3s infinite;
-  }
-
-  .st6 {
-    fill: #E0E0D1;
-  }
-}
-
-
-#moon {
-  width: 200%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(100%, -50%);
-
-  &.moon-landing {
-    animation: moon 2s forwards;
-  }
-
-  .st0 {
-    fill: #7988A2;
-  }
-
-  .st1 {
-    fill: #60718C;
-  }
-
-  .st2 {
-    fill: #FFFFFF;
-  }
-
-  .st3 {
-    fill: #435D7B;
-  }
-
-  .st4 {
-    fill: #0D0E1F;
-  }
-}
-
-
 @keyframes apparition {
   100% {
     opacity: 1;
@@ -219,28 +148,3 @@ h1 {
   }
 }
 
-@keyframes rocket-launch {
-  0% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(-3%, 3%);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
-@keyframes moon {
-  100% {
-    width: 120%;
-    transform: none;
-  }
-}
-
-@keyframes rocket-landing {
-
-  100% {
-    transform: translate(1000%, 1000%);
-  }
-}

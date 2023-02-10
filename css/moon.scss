@@ -1,0 +1,38 @@
+#moon {
+  width: 200%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(100%, -50%);
+
+  &.moon-landing {
+    animation: moon 2s forwards;
+  }
+
+  .st0 {
+    fill: #7988A2;
+  }
+
+  .st1 {
+    fill: #60718C;
+  }
+
+  .st2 {
+    fill: #FFFFFF;
+  }
+
+  .st3 {
+    fill: #435D7B;
+  }
+
+  .st4 {
+    fill: #0D0E1F;
+  }
+}
+
+@keyframes moon {
+  100% {
+    width: 120%;
+    transform: none;
+  }
+}

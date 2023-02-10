@@ -1,0 +1,31 @@
+@import "variables";
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  font-size: 2rem;
+  width: 40%;
+  color: $color-quinary;
+  animation: apparition 1s forwards;
+  transform: translateX(-80px);
+  opacity: 0;
+
+  input {
+    font-size: 2rem;
+    border: none;
+    border-bottom: 1px solid $color-primary-light;
+    background: none;
+    width: 100%;
+    margin: 5% 0;
+    caret-color: $color-primary-light;
+    padding: 1rem;
+    color: $color-quinary;
+  }
+}
+
+
