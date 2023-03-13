@@ -32,12 +32,12 @@
 
   .st4 {
     fill: #E0995E;
-    animation: rocket-launch 0.3s infinite;
+    animation: rocket-fire 0.3s infinite;
   }
 
   .st5 {
     fill: #F5CF87;
-    animation: rocket-launch 0.3s infinite;
+    animation: rocket-fire 0.3s infinite;
   }
 
   .st6 {
@@ -45,7 +45,7 @@
   }
 }
 
-@keyframes rocket-launch {
+@keyframes rocket-fire {
   0% {
     transform: translate(0);
   }

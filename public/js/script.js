@@ -11,7 +11,6 @@ title.children[2].addEventListener("animationend", (e) => {
 
 ['click'].forEach(event => {
     document.addEventListener(event, function (e) {
-        console.log(e)
         goButton.classList.add("turn-around");
         moon.classList.add("moon-landing");
         rocket.classList.add("rocket-landing");
@@ -21,8 +20,6 @@ title.children[2].addEventListener("animationend", (e) => {
 
 rocket.addEventListener("animationend", (e) => {
     if (e.animationName === "rocket-landing") {
-        displayEmail();
+        displayInput();
     }
 });
-
-

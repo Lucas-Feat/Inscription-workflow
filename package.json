@@ -1,0 +1,7 @@
+{
+  "name": "untitled",
+  "version": "1.0.0",
+  "dependencies": {
+    "firebase": "^9.17.2"
+  }
+}

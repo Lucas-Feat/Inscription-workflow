@@ -1,0 +1,86 @@
+@import "variables";
+
+.ellipsis-system {
+  margin: 10px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  .ellipsis1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: $color-quinary solid 2px;
+    animation: ellipsis-rotate 3s infinite;
+  }
+
+  .ellipsis2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scale: 0.9;
+    border-radius: 50%;
+    border: $color-quinary solid 2px;
+    animation: ellipsis2-rotate 2.5s infinite linear;
+  }
+
+  .center-sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-quinary;
+  }
+
+  .satellite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+
+    &:after {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $color-quinary;
+      animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    }
+  }
+}
+
+@keyframes ellipsis-rotate {
+  50% {
+    transform: rotate3d(80, 20, 0, 180deg);
+  }
+}
+
+@keyframes ellipsis2-rotate {
+  50% {
+    transform: rotate3d(30, 65, 0, 180deg);
+  }
+}
+
+@keyframes yAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(45px);
+  }
+}
+
+@keyframes xAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(50px);
+  }
+}
